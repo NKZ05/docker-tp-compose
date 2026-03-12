@@ -39,8 +39,12 @@ Les commandes doivent etre fournies dans un fichier separe `COMMANDS.md`.
 ## Questions de reflexion
 
 - Pourquoi `api` doit-il etre connecte a deux reseaux dans cette architecture ?
+`api` est connecté aux deux réseaux pour servir d'intermédiaire : le front l'atteint via le réseau `frontend`, et `api` contacte la DB via le réseau `backend`. Cela évite d'exposer la DB côté `frontend`.
 - Quel interet de combiner `build` et `image` sur un meme service ?
+Combiner `build` et `image` permet de construire localement tout en donnant un nom d'image stable (utile pour push/CI ou pour référencer l'image ailleurs).
 - Pourquoi la base ne doit-elle pas etre publiee avec `ports` dans ce cas ?
+La DB ne doit pas être publiée (`ports`) pour éviter qu'elle soit accessible directement depuis l'hôte, elle doit rester sur le réseau `backend`.
+
 
 ## Criteres de validation
 
