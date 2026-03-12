@@ -23,14 +23,16 @@ Le front ne doit parler qu'a l'API. La base de donnees ne doit pas etre exposee 
 
 ## Travail a faire
 
-1. Declarer une architecture Compose avec `web`, `api` et `db`.
-2. Faire les choix de configuration necessaires pour:
-   - construire les services applicatifs
+1. Creer un fichier `.env` a partir de `.env.example` et completer les valeurs.
+2. Declarer une architecture Compose avec `web`, `api` et `db`.
+3. Faire les choix de configuration necessaires pour:
+   - construire les services applicatifs et nommer les images produites
+   - externaliser la configuration sensible via le fichier `.env`
    - exposer uniquement les services utiles vers l'hote
    - conserver les donnees de la base
    - isoler correctement les communications reseau
-3. Lancer la stack puis verifier son fonctionnement.
-4. Nettoyer l'ensemble des ressources creees.
+4. Lancer la stack puis verifier son fonctionnement.
+5. Nettoyer l'ensemble des ressources creees.
 
 Les commandes doivent etre fournies dans un fichier separe `COMMANDS.md`.
 
